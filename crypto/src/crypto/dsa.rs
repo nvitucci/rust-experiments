@@ -88,10 +88,10 @@ mod tests {
 
         let m = BigUint::from(124540019u32);
 
-        let dsa_signed = dsa.sign(&m);
-        let dsa_verified = dsa.verify(&m, &dsa_signed);
+        let signed = dsa.sign(&m);
+        let verified = dsa.verify(&m, &signed);
 
-        assert!(dsa_verified);
+        assert!(verified);
     }
 
     #[test]
@@ -106,10 +106,10 @@ mod tests {
 
         let m = bignum(b"1482726341215123");
 
-        let dsa_signed = dsa.sign(&m);
-        let dsa_verified = dsa.verify(&m, &dsa_signed);
+        let signed = dsa.sign(&m);
+        let verified = dsa.verify(&m, &signed);
 
-        assert!(dsa_verified);
+        assert!(verified);
     }
 
     #[test]

@@ -67,10 +67,10 @@ mod tests {
 
         let m = BigUint::from(5234673u32);
 
-        let rsa_encoded = rsa.encrypt(&m);
-        let rsa_decoded = rsa.decrypt(&rsa_encoded);
+        let encrypted = rsa.encrypt(&m);
+        let decrypted = rsa.decrypt(&encrypted);
 
-        assert_eq!(m, rsa_decoded);
+        assert_eq!(m, decrypted);
     }
 
     #[test]
@@ -83,9 +83,9 @@ mod tests {
 
         let m = bignum(b"1482726341215123");
 
-        let rsa_encoded = rsa.encrypt(&m);
-        let rsa_decoded = rsa.decrypt(&rsa_encoded);
+        let encrypted = rsa.encrypt(&m);
+        let decrypted = rsa.decrypt(&encrypted);
 
-        assert_eq!(m, rsa_decoded);
+        assert_eq!(m, decrypted);
     }
 }

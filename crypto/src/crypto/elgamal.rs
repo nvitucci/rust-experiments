@@ -70,10 +70,10 @@ mod tests {
 
         let m = BigUint::from(2035u32);
 
-        let elgamal_encoded = elgamal.encrypt(&m);
-        let elgamal_decoded = elgamal.decrypt(&elgamal_encoded);
+        let encrypted = elgamal.encrypt(&m);
+        let decrypted = elgamal.decrypt(&encrypted);
 
-        assert_eq!(m, elgamal_decoded);
+        assert_eq!(m, decrypted);
     }
 
     #[test]
@@ -87,9 +87,9 @@ mod tests {
 
         let m = bignum(b"1482726341215123");
 
-        let elgamal_encoded = elgamal.encrypt(&m);
-        let elgamal_decoded = elgamal.decrypt(&elgamal_encoded);
+        let encrypted = elgamal.encrypt(&m);
+        let decrypted = elgamal.decrypt(&encrypted);
 
-        assert_eq!(m, elgamal_decoded);
+        assert_eq!(m, decrypted);
     }
 }
